@@ -7,48 +7,43 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.whiteColor()
         addPlayer()
-        
-        runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.runBlock(addMonster),
-                SKAction.waitForDuration(1.0)
-                ])
-            ))
+        addMonsters()
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
-        
+
         let touchLocation = touch.locationInNode(self)
-        let projectile = SKSpriteNode(imageNamed: "projectile")
-        projectile.position = player.position
         
-        guard let offset = projectileOffsetFor(touchLocation, projectilePosition: projectile.position) else {
+        guard let offset = Projectile.projectileOffsetFor(touchLocation, projectilePosition: player.position) else {
             return
         }
         
-        addChild(projectile)
-        
-        let direction = offset.normalized()
-        let shootAmount = direction * 1000
-        let destination = shootAmount + projectile.position
-        
-        let actionMove = SKAction.moveTo(destination, duration: 2.0)
-        let actionMoveDone = SKAction.removeFromParent()
-        projectile.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        addProjectile(withOffset: offset)
     }
     
-    private func projectileOffsetFor(touchLocation: CGPoint, projectilePosition: CGPoint) -> CGPoint? {
-        let offset = touchLocation - projectilePosition
-        return offset.x > -10 ? offset : nil
+    private func addProjectile(withOffset offset: CGPoint) {
+        let projectile = Projectile(imageNamed: "projectile")
+        projectile.position = player.position
+        projectile.offset = offset
+        addChild(projectile)
     }
     
     private func addPlayer() {
         player = SKSpriteNode(imageNamed: "player")
         player.position = CGPoint(x: size.width * 0.1, y: size.height * 0.5)
         addChild(player)
+    }
+    
+    private func addMonsters() {
+        runAction(SKAction.repeatActionForever(
+            SKAction.sequence([
+                SKAction.runBlock(addMonster),
+                SKAction.waitForDuration(1.0)
+                ])
+            ))
     }
     
     private func addMonster() {
