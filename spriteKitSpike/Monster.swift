@@ -2,17 +2,20 @@ import SpriteKit
 
 class Monster: SKSpriteNode {
     
-    init() {
+    static let MonsterSize = CGSize(width: 30, height: 40)
+    
+    init(withPosition position: CGPoint) {
         let texture = SKTexture(imageNamed: "monster")
-        let size = CGSize(width: 30, height: 40)
-        super.init(texture: texture, color: UIColor(), size: size)
+        super.init(texture: texture, color: UIColor(), size: Monster.MonsterSize)
+        self.position = position
+        setUpMonster()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func setUpMonster() {
+    private func setUpMonster() {
         let durationOfMove = RandomGenerator.random(2, max: 4)
         let positionToMoveTo = CGPoint(x: -self.size.width/2, y: self.position.y)
         let actionMove = SKAction.moveTo(positionToMoveTo, duration: NSTimeInterval(durationOfMove))

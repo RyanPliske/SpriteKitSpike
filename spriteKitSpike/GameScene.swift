@@ -4,6 +4,8 @@ class GameScene: SKScene {
     
     private var player: SKSpriteNode!
     
+    // MARK: Action Handling
+    
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.whiteColor()
         addPlayer()
@@ -14,15 +16,14 @@ class GameScene: SKScene {
         guard let touch = touches.first else {
             return
         }
-
         let touchLocation = touch.locationInNode(self)
-        
         guard let offset = Projectile.projectileOffsetFor(touchLocation, projectilePosition: player.position) else {
             return
         }
-        
         addProjectile(withOffset: offset)
     }
+    
+    // MARK: Add Nodes
     
     private func addProjectile(withOffset offset: CGPoint) {
         let projectile = Projectile(withOffset: offset)
@@ -46,13 +47,15 @@ class GameScene: SKScene {
     }
     
     private func addMonster() {
-        let monster = Monster()
-        let minYPosition = Int(monster.size.height / 2)
-        let maxYPosition = Int(size.height - monster.size.height / 2)
-        let actualYPosition = RandomGenerator.random(minYPosition, max: maxYPosition)
-        monster.position = CGPoint(x: size.width + monster.size.width / 2, y: actualYPosition)
-        monster.setUpMonster()
+        let monster = Monster(withPosition: randomMonsterPosition)
         addChild(monster)
+    }
+    
+    private var randomMonsterPosition: CGPoint {
+        let minYPosition = Int(Monster.MonsterSize.height / 2)
+        let maxYPosition = Int(size.height - Monster.MonsterSize.height / 2)
+        let actualYPosition = RandomGenerator.random(minYPosition, max: maxYPosition)
+        return CGPoint(x: size.width + Monster.MonsterSize.width / 2, y: actualYPosition)
     }
     
 }
