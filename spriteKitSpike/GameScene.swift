@@ -21,6 +21,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addMonsters()
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
+        
+        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
+        backgroundMusic.autoplayLooped = true
+        addChild(backgroundMusic)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -32,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         addProjectile(withOffset: offset)
+        runAction(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
     }
     
     // SKPhysicsContactDelegate
