@@ -7,14 +7,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
     
     override init(size: CGSize) {
         super.init(size: size)
-        self.scaleMode = .ResizeFill
+        scaleMode = .ResizeFill
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    // MARK: Action Handling
+    deinit {
+        print("\(NSStringFromClass(self.dynamicType)) : \(__FUNCTION__) at \(__LINE__)")
+    }
     
     override func didMoveToView(view: SKView) {
         backgroundColor = SKColor.whiteColor()
@@ -23,6 +25,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
     }
+    
+    // MARK: Action Handling
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else {
@@ -62,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
         if (monstersDestroyed > 10) {
             let reveal = SKTransition.flipHorizontalWithDuration(0.5)
             let gameOverScene = GameOverScene(size: size, won: true)
-            self.view?.presentScene(gameOverScene, transition: reveal)
+            view?.presentScene(gameOverScene, transition: reveal)
         }
     }
     
@@ -70,8 +74,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
     
     func monsterHasReachedLeftSide() {
         let reveal = SKTransition.flipHorizontalWithDuration(0.5)
-        let gameOverScene = GameOverScene(size: self.size, won: false)
-        self.view?.presentScene(gameOverScene, transition: reveal)
+        let gameOverScene = GameOverScene(size: size, won: false)
+        view?.presentScene(gameOverScene, transition: reveal)
     }
     
     // MARK: Add Nodes
@@ -88,12 +92,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
     }
     
     private func addMonsters() {
-        runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.runBlock(addMonster),
-                SKAction.waitForDuration(1.0)
-                ])
-            ))
+        let actionSequence = [SKAction.runBlock(addMonster), SKAction.waitForDuration(1.0)]
+        let action = SKAction.sequence(actionSequence)
+        let repeatingAction = SKAction.repeatActionForever(action)
+        runAction(repeatingAction)
     }
     
     private func addMonster() {

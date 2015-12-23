@@ -15,7 +15,7 @@ class GameOverScene: SKScene {
         addChild(label)
         
         let actionSequence = [SKAction.waitForDuration(6.0), SKAction.runBlock(flip)]
-        let action: SKAction = SKAction.sequence(actionSequence)
+        let action = SKAction.sequence(actionSequence)
         runAction(action)
     }
 
@@ -23,10 +23,14 @@ class GameOverScene: SKScene {
         super.init(coder: aDecoder)
     }
     
+    deinit {
+        print("\(NSStringFromClass(self.dynamicType)) : \(__FUNCTION__) at \(__LINE__)")
+    }
+    
     private func flip() {
         let reveal = SKTransition.flipHorizontalWithDuration(0.5)
-        let scene = GameScene(size: self.size)
-        self.view?.presentScene(scene, transition: reveal)
+        let scene = GameScene(size: size)
+        view?.presentScene(scene, transition: reveal)
     }
     
 }

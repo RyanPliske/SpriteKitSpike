@@ -7,7 +7,7 @@ class GameViewController: UIViewController {
     private var audioPlayer: AVAudioPlayer!
     
     private var gameView: GameView {
-        return self.view as! GameView
+        return view as! GameView
     }
 
     override func viewDidLoad() {
