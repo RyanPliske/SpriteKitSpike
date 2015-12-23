@@ -40,7 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
         runAction(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
     }
     
-    // SKPhysicsContactDelegate
+    // MARK: SKPhysicsContactDelegate
     
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody
@@ -57,7 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
         }
     }
     
-    // Collision Handling
+    // MARK: Collision Handling
     
     func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
         projectile.removeFromParent()
@@ -70,7 +70,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
         }
     }
     
-    // MonsterDelegate
+    // MARK: MonsterDelegate
     
     func monsterHasReachedLeftSide() {
         let reveal = SKTransition.flipHorizontalWithDuration(0.5)
