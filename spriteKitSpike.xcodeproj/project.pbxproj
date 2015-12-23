@@ -22,6 +22,7 @@
 		F9B545481C2AE553001595A5 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B545471C2AE553001595A5 /* PhysicsCategory.swift */; };
 		F9B5454C1C2AEF8C001595A5 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = F9B5454A1C2AEF8C001595A5 /* background-music-aac.caf */; };
 		F9B5454D1C2AEF8C001595A5 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = F9B5454B1C2AEF8C001595A5 /* pew-pew-lei.caf */; };
+		F9B5454F1C2AF0AD001595A5 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F9B545471C2AE553001595A5 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		F9B5454A1C2AEF8C001595A5 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		F9B5454B1C2AEF8C001595A5 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				F91DD3781C2A4F4C004E45CC /* GameView.swift */,
 				F91DD34C1C2A0518004E45CC /* GameViewController.swift */,
+				F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */,
 				F91DD34A1C2A0518004E45CC /* GameScene.swift */,
 				F91DD3701C2A2647004E45CC /* Monster.swift */,
 				F91DD3741C2A3806004E45CC /* Projectile.swift */,
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B5454F1C2AF0AD001595A5 /* GameOverScene.swift in Sources */,
 				F91DD3711C2A2647004E45CC /* Monster.swift in Sources */,
 				F91DD35F1C2A15A2004E45CC /* RandomGenerator.swift in Sources */,
 				F91DD3731C2A3258004E45CC /* CGPoint+Extension.swift in Sources */,

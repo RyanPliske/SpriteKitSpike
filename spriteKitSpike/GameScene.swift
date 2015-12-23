@@ -1,8 +1,9 @@
 import SpriteKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, MonsterDelegate {
     
     private var player: SKSpriteNode!
+    private var monstersDestroyed = 0
     
     override init(size: CGSize) {
         super.init(size: size)
@@ -21,10 +22,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addMonsters()
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
-        
-        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
-        backgroundMusic.autoplayLooped = true
-        addChild(backgroundMusic)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -61,6 +58,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
         projectile.removeFromParent()
         monster.removeFromParent()
+        monstersDestroyed++
+        if (monstersDestroyed > 10) {
+            let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+            let gameOverScene = GameOverScene(size: size, won: true)
+            self.view?.presentScene(gameOverScene, transition: reveal)
+        }
+    }
+    
+    // MonsterDelegate
+    
+    func monsterHasReachedLeftSide() {
+        let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+        let gameOverScene = GameOverScene(size: self.size, won: false)
+        self.view?.presentScene(gameOverScene, transition: reveal)
     }
     
     // MARK: Add Nodes
@@ -87,6 +98,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func addMonster() {
         let monster = Monster(withPosition: randomMonsterPosition)
+        monster.delegate = self
         addChild(monster)
     }
     

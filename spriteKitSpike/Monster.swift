@@ -1,8 +1,14 @@
 import SpriteKit
 
+protocol MonsterDelegate: class {
+    func monsterHasReachedLeftSide()
+}
+
 class Monster: SKSpriteNode {
     
     static let MonsterSize = CGSize(width: 30, height: 40)
+    
+    weak var delegate: MonsterDelegate?
     
     init(withPosition position: CGPoint) {
         let texture = SKTexture(imageNamed: "monster")
@@ -20,7 +26,10 @@ class Monster: SKSpriteNode {
         let positionToMoveTo = CGPoint(x: -size.width/2, y: position.y)
         let actionMove = SKAction.moveTo(positionToMoveTo, duration: NSTimeInterval(durationOfMove))
         let actionMoveDone = SKAction.removeFromParent()
-        runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        let loseAction = SKAction.runBlock { [unowned self]() -> Void in
+            self.delegate?.monsterHasReachedLeftSide()
+        }
+        runAction(SKAction.sequence([actionMove, loseAction, actionMoveDone]))
         
         // Setup the HitBox
         physicsBody = SKPhysicsBody(rectangleOfSize: size)
@@ -31,5 +40,7 @@ class Monster: SKSpriteNode {
         physicsBody?.contactTestBitMask = PhysicsCategory.Projectile
         physicsBody?.collisionBitMask = PhysicsCategory.None
     }
+    
+
     
 }
