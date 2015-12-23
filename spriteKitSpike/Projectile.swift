@@ -2,13 +2,22 @@ import SpriteKit
 
 class Projectile: SKSpriteNode {
     
-    var offset: CGPoint! {
-        didSet {
-            setupProjectile()
-        }
+    let offset: CGPoint
+    
+    init(withOffset offset: CGPoint) {
+        self.offset = offset
+        let texture = SKTexture(imageNamed: "projectile")
+        let size = CGSize(width: 15, height: 15)
+        super.init(texture: texture, color: UIColor(), size: size)
+        setupProjectile()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        self.offset = CGPoint()
+        super.init(coder: aDecoder)
     }
     
-    func setupProjectile() {
+    private func setupProjectile() {
         let direction = offset.normalized()
         let shootAmount = direction * 1000
         let destination = shootAmount + self.position
