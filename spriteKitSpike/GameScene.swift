@@ -4,13 +4,13 @@ class GameScene: SKScene {
     
     private var player: SKSpriteNode!
     
-    override var scaleMode: SKSceneScaleMode {
-        get {
-            return .ResizeFill
-        }
-        set {
-            self.scaleMode = newValue
-        }
+    override init(size: CGSize) {
+        super.init(size: size)
+        self.scaleMode = .ResizeFill
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     // MARK: Action Handling

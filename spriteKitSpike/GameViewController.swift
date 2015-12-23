@@ -9,8 +9,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scene = GameScene(size: view.bounds.size)
-        gameView.presentScene(scene)
+        gameView.presentScene(GameScene(size: view.bounds.size))
     }
 
 }
