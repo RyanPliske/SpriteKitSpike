@@ -23,18 +23,13 @@ class GameScene: SKScene {
     }
     
     private func addMonster() {
-        let monster = SKSpriteNode(imageNamed: "monster")
-        let min = Int(monster.size.height / 2)
-        let max = Int(size.height - monster.size.height / 2)
-        let yPosition = RandomGenerator.random(min, max: max)
-        monster.position = CGPoint(x: size.width + monster.size.width / 2, y: yPosition)
+        let monster = Monster(imageNamed: "monster")
+        let minYPosition = Int(monster.size.height / 2)
+        let maxYPosition = Int(size.height - monster.size.height / 2)
+        let actualYPosition = RandomGenerator.random(minYPosition, max: maxYPosition)
+        monster.position = CGPoint(x: size.width + monster.size.width / 2, y: actualYPosition)
+        monster.setUpMonster()
         addChild(monster)
-        
-        let durationOfMove = RandomGenerator.random(2, max: 4)
-        let positionToMoveTo = CGPoint(x: -monster.size.width/2, y: yPosition)
-        let actionMove = SKAction.moveTo(positionToMoveTo, duration: NSTimeInterval(durationOfMove))
-        let actionMoveDone = SKAction.removeFromParent()
-        monster.runAction(SKAction.sequence([actionMove, actionMoveDone]))
     }
     
 }
