@@ -25,6 +25,9 @@
 		F9B5454F1C2AF0AD001595A5 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */; };
 		F9B545511C2B02B0001595A5 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B545501C2B02B0001595A5 /* AudioPlayer.swift */; };
 		F9B545541C2B047D001595A5 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B545521C2B0447001595A5 /* AudioPlayerTests.swift */; };
+		F9B545571C2B071B001595A5 /* GameViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B545551C2B06DC001595A5 /* GameViewTests.swift */; };
+		F9DB48D31C2B099000471DDF /* NSCoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB48D21C2B099000471DDF /* NSCoder+Extension.swift */; };
+		F9DB48D41C2B099000471DDF /* NSCoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB48D21C2B099000471DDF /* NSCoder+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,8 @@
 		F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		F9B545501C2B02B0001595A5 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		F9B545521C2B0447001595A5 /* AudioPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
+		F9B545551C2B06DC001595A5 /* GameViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewTests.swift; sourceTree = "<group>"; };
+		F9DB48D21C2B099000471DDF /* NSCoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCoder+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +108,6 @@
 			children = (
 				F91DD3461C2A0518004E45CC /* AppDelegate.swift */,
 				F91DD3771C2A4F2F004E45CC /* Game */,
-				F91DD3761C2A4EFB004E45CC /* Utility */,
 				F9B545491C2AEF55001595A5 /* Sounds */,
 				F91DD34E1C2A0518004E45CC /* Main.storyboard */,
 				F91DD3511C2A0518004E45CC /* Assets.xcassets */,
@@ -124,9 +128,11 @@
 		F91DD3761C2A4EFB004E45CC /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F9B545471C2AE553001595A5 /* PhysicsCategory.swift */,
 				F91DD35E1C2A15A2004E45CC /* RandomGenerator.swift */,
 				F91DD36E1C2A17E1004E45CC /* RandomGeneratorTests.swift */,
 				F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */,
+				F9DB48D21C2B099000471DDF /* NSCoder+Extension.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -135,14 +141,15 @@
 			isa = PBXGroup;
 			children = (
 				F91DD3781C2A4F4C004E45CC /* GameView.swift */,
+				F9B545551C2B06DC001595A5 /* GameViewTests.swift */,
 				F91DD34C1C2A0518004E45CC /* GameViewController.swift */,
 				F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */,
 				F91DD34A1C2A0518004E45CC /* GameScene.swift */,
 				F91DD3701C2A2647004E45CC /* Monster.swift */,
 				F91DD3741C2A3806004E45CC /* Projectile.swift */,
-				F9B545471C2AE553001595A5 /* PhysicsCategory.swift */,
 				F9B545501C2B02B0001595A5 /* AudioPlayer.swift */,
 				F9B545521C2B0447001595A5 /* AudioPlayerTests.swift */,
+				F91DD3761C2A4EFB004E45CC /* Utility */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DB48D31C2B099000471DDF /* NSCoder+Extension.swift in Sources */,
 				F9B5454F1C2AF0AD001595A5 /* GameOverScene.swift in Sources */,
 				F91DD3711C2A2647004E45CC /* Monster.swift in Sources */,
 				F9B545511C2B02B0001595A5 /* AudioPlayer.swift in Sources */,
@@ -277,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DB48D41C2B099000471DDF /* NSCoder+Extension.swift in Sources */,
+				F9B545571C2B071B001595A5 /* GameViewTests.swift in Sources */,
 				F91DD36F1C2A17E1004E45CC /* RandomGeneratorTests.swift in Sources */,
 				F9B545541C2B047D001595A5 /* AudioPlayerTests.swift in Sources */,
 			);
