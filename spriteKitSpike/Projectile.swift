@@ -4,11 +4,12 @@ class Projectile: SKSpriteNode {
     
     let offset: CGPoint
     
-    init(withOffset offset: CGPoint) {
+    init(offset: CGPoint, position: CGPoint) {
         self.offset = offset
         let texture = SKTexture(imageNamed: "projectile")
         let size = CGSize(width: 15, height: 15)
         super.init(texture: texture, color: UIColor(), size: size)
+        self.position = position
         setupProjectile()
     }
 

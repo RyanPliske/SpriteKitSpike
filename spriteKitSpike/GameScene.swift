@@ -26,8 +26,7 @@ class GameScene: SKScene {
     // MARK: Add Nodes
     
     private func addProjectile(withOffset offset: CGPoint) {
-        let projectile = Projectile(withOffset: offset)
-        projectile.position = player.position
+        let projectile = Projectile(offset: offset, position: player.position)
         addChild(projectile)
     }
     
