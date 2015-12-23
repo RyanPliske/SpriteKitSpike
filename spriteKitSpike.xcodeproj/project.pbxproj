@@ -18,6 +18,7 @@
 		F91DD3711C2A2647004E45CC /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3701C2A2647004E45CC /* Monster.swift */; };
 		F91DD3731C2A3258004E45CC /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */; };
 		F91DD3751C2A3806004E45CC /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3741C2A3806004E45CC /* Projectile.swift */; };
+		F91DD3791C2A4F4C004E45CC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3781C2A4F4C004E45CC /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F91DD3701C2A2647004E45CC /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F91DD3741C2A3806004E45CC /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
+		F91DD3781C2A4F4C004E45CC /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				F91DD3461C2A0518004E45CC /* AppDelegate.swift */,
-				F91DD34C1C2A0518004E45CC /* GameViewController.swift */,
-				F91DD34A1C2A0518004E45CC /* GameScene.swift */,
-				F91DD3701C2A2647004E45CC /* Monster.swift */,
-				F91DD3741C2A3806004E45CC /* Projectile.swift */,
-				F91DD35E1C2A15A2004E45CC /* RandomGenerator.swift */,
-				F91DD36E1C2A17E1004E45CC /* RandomGeneratorTests.swift */,
-				F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */,
+				F91DD3771C2A4F2F004E45CC /* Game */,
+				F91DD3761C2A4EFB004E45CC /* Utility */,
 				F91DD34E1C2A0518004E45CC /* Main.storyboard */,
 				F91DD3511C2A0518004E45CC /* Assets.xcassets */,
 				F91DD3531C2A0518004E45CC /* LaunchScreen.storyboard */,
@@ -109,6 +106,28 @@
 				F91DD3681C2A17CD004E45CC /* Info.plist */,
 			);
 			path = spriteKitSpikeTests;
+			sourceTree = "<group>";
+		};
+		F91DD3761C2A4EFB004E45CC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD35E1C2A15A2004E45CC /* RandomGenerator.swift */,
+				F91DD36E1C2A17E1004E45CC /* RandomGeneratorTests.swift */,
+				F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		F91DD3771C2A4F2F004E45CC /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				F91DD3781C2A4F4C004E45CC /* GameView.swift */,
+				F91DD34C1C2A0518004E45CC /* GameViewController.swift */,
+				F91DD34A1C2A0518004E45CC /* GameScene.swift */,
+				F91DD3701C2A2647004E45CC /* Monster.swift */,
+				F91DD3741C2A3806004E45CC /* Projectile.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +237,7 @@
 				F91DD34B1C2A0518004E45CC /* GameScene.swift in Sources */,
 				F91DD3751C2A3806004E45CC /* Projectile.swift in Sources */,
 				F91DD34D1C2A0518004E45CC /* GameViewController.swift in Sources */,
+				F91DD3791C2A4F4C004E45CC /* GameView.swift in Sources */,
 				F91DD3471C2A0518004E45CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

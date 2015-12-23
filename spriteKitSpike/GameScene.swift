@@ -4,6 +4,15 @@ class GameScene: SKScene {
     
     private var player: SKSpriteNode!
     
+    override var scaleMode: SKSceneScaleMode {
+        get {
+            return .ResizeFill
+        }
+        set {
+            self.scaleMode = newValue
+        }
+    }
+    
     // MARK: Action Handling
     
     override func didMoveToView(view: SKView) {
