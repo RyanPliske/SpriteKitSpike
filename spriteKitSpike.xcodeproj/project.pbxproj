@@ -19,6 +19,7 @@
 		F91DD3731C2A3258004E45CC /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */; };
 		F91DD3751C2A3806004E45CC /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3741C2A3806004E45CC /* Projectile.swift */; };
 		F91DD3791C2A4F4C004E45CC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DD3781C2A4F4C004E45CC /* GameView.swift */; };
+		F9B545481C2AE553001595A5 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B545471C2AE553001595A5 /* PhysicsCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		F91DD3721C2A3258004E45CC /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F91DD3741C2A3806004E45CC /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		F91DD3781C2A4F4C004E45CC /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F9B545471C2AE553001595A5 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				F91DD34A1C2A0518004E45CC /* GameScene.swift */,
 				F91DD3701C2A2647004E45CC /* Monster.swift */,
 				F91DD3741C2A3806004E45CC /* Projectile.swift */,
+				F9B545471C2AE553001595A5 /* PhysicsCategory.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				F91DD3711C2A2647004E45CC /* Monster.swift in Sources */,
 				F91DD35F1C2A15A2004E45CC /* RandomGenerator.swift in Sources */,
 				F91DD3731C2A3258004E45CC /* CGPoint+Extension.swift in Sources */,
+				F9B545481C2AE553001595A5 /* PhysicsCategory.swift in Sources */,
 				F91DD34B1C2A0518004E45CC /* GameScene.swift in Sources */,
 				F91DD3751C2A3806004E45CC /* Projectile.swift in Sources */,
 				F91DD34D1C2A0518004E45CC /* GameViewController.swift in Sources */,
@@ -429,6 +433,7 @@
 				F91DD35B1C2A0518004E45CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F91DD36B1C2A17CD004E45CC /* Build configuration list for PBXNativeTarget "spriteKitSpikeTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +442,7 @@
 				F91DD36D1C2A17CD004E45CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

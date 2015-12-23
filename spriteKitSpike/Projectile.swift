@@ -21,11 +21,21 @@ class Projectile: SKSpriteNode {
     private func setupProjectile() {
         let direction = offset.normalized()
         let shootAmount = direction * 1000
-        let destination = shootAmount + self.position
+        let destination = shootAmount + position
         
         let actionMove = SKAction.moveTo(destination, duration: 2.0)
         let actionMoveDone = SKAction.removeFromParent()
-        self.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        
+        // Setup the HitBox
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+        // Physics Engine will not control the projectile, I will.
+        physicsBody?.dynamic = true
+        // Assign collisions
+        physicsBody?.categoryBitMask = PhysicsCategory.Projectile
+        physicsBody?.contactTestBitMask = PhysicsCategory.Monster
+        physicsBody?.collisionBitMask = PhysicsCategory.None
+        physicsBody?.usesPreciseCollisionDetection = true
     }
     
     class func projectileOffsetFor(touchLocation: CGPoint, projectilePosition: CGPoint) -> CGPoint? {

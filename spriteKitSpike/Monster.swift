@@ -17,10 +17,19 @@ class Monster: SKSpriteNode {
     
     private func setUpMonster() {
         let durationOfMove = RandomGenerator.random(2, max: 4)
-        let positionToMoveTo = CGPoint(x: -self.size.width/2, y: self.position.y)
+        let positionToMoveTo = CGPoint(x: -size.width/2, y: position.y)
         let actionMove = SKAction.moveTo(positionToMoveTo, duration: NSTimeInterval(durationOfMove))
         let actionMoveDone = SKAction.removeFromParent()
-        self.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        
+        // Setup the HitBox
+        physicsBody = SKPhysicsBody(rectangleOfSize: size)
+        // Physics Engine will not control the monster, I will.
+        physicsBody?.dynamic = true
+        // Assign collisions
+        physicsBody?.categoryBitMask = PhysicsCategory.Monster
+        physicsBody?.contactTestBitMask = PhysicsCategory.Projectile
+        physicsBody?.collisionBitMask = PhysicsCategory.None
     }
     
 }

@@ -1,6 +1,6 @@
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var player: SKSpriteNode!
     
@@ -19,6 +19,8 @@ class GameScene: SKScene {
         backgroundColor = SKColor.whiteColor()
         addPlayer()
         addMonsters()
+        physicsWorld.gravity = CGVectorMake(0, 0)
+        physicsWorld.contactDelegate = self
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -30,6 +32,30 @@ class GameScene: SKScene {
             return
         }
         addProjectile(withOffset: offset)
+    }
+    
+    // SKPhysicsContactDelegate
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        if (firstBody.categoryBitMask != 0 && secondBody.categoryBitMask != 0) {
+                projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, monster: secondBody.node as! SKSpriteNode)
+        }
+    }
+    
+    // Collision Handling
+    
+    func projectileDidCollideWithMonster(projectile:SKSpriteNode, monster:SKSpriteNode) {
+        projectile.removeFromParent()
+        monster.removeFromParent()
     }
     
     // MARK: Add Nodes
