@@ -7,22 +7,14 @@ class GameOverLabelNode: SKLabelNode {
         case Loss = "You Lose!"
     }
     
-    override init() {
-        super.init()
-    }
-    
-    init(won: Bool, position: CGPoint) {
-        super.init(fontNamed: "Chalkduster")
+    convenience init(won: Bool, position: CGPoint) {
+        self.init(fontNamed: "Chalkduster")
         let text = won ? Message.Win.rawValue : Message.Loss.rawValue
         self.text = text
         self.position = position
         self.fontSize = 40
         self.fontColor = SKColor.blackColor()
         
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
 }
