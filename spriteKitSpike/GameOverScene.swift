@@ -3,11 +3,6 @@ import SpriteKit
 
 class GameOverScene: SKScene {
     
-    enum Message: String {
-        case Win = "You Won!"
-        case Loss = "You Lose!"
-    }
-    
     init(size: CGSize, won: Bool) {
         super.init(size: size)
         backgroundColor = SKColor.whiteColor()
@@ -28,12 +23,7 @@ class GameOverScene: SKScene {
     }
     
     func displayLabel(won: Bool) {
-        let label = SKLabelNode(fontNamed: "Chalkduster")
-        let message = won ? Message.Win.rawValue : Message.Loss.rawValue
-        label.text = message
-        label.fontSize = 40
-        label.fontColor = SKColor.blackColor()
-        label.position = CGPoint(x: size.width/2, y: size.height/2)
+        let label = GameOverLabelNode(won: won, position: CGPoint(x: size.width/2, y: size.height/2))
         addChild(label)
     }
     

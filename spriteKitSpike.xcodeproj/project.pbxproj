@@ -30,6 +30,8 @@
 		F9DB48D41C2B099000471DDF /* NSCoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB48D21C2B099000471DDF /* NSCoder+Extension.swift */; };
 		F9DB48D61C2B0D3100471DDF /* GameOverSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB48D51C2B0D3100471DDF /* GameOverSceneTests.swift */; };
 		F9DB48DA1C2B122F00471DDF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB48D91C2B122F00471DDF /* UIColor+Extension.swift */; };
+		F9E8370F1C2C4AF5004856E6 /* GameOverLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8370E1C2C4AF5004856E6 /* GameOverLabelNode.swift */; };
+		F9E837111C2C4EFF004856E6 /* GameOverLabelNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E837101C2C4EFF004856E6 /* GameOverLabelNodeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		F9DB48D21C2B099000471DDF /* NSCoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCoder+Extension.swift"; sourceTree = "<group>"; };
 		F9DB48D51C2B0D3100471DDF /* GameOverSceneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverSceneTests.swift; sourceTree = "<group>"; };
 		F9DB48D91C2B122F00471DDF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F9E8370E1C2C4AF5004856E6 /* GameOverLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverLabelNode.swift; sourceTree = "<group>"; };
+		F9E837101C2C4EFF004856E6 /* GameOverLabelNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverLabelNodeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,8 @@
 			children = (
 				F9B5454E1C2AF0AD001595A5 /* GameOverScene.swift */,
 				F9DB48D51C2B0D3100471DDF /* GameOverSceneTests.swift */,
+				F9E8370E1C2C4AF5004856E6 /* GameOverLabelNode.swift */,
+				F9E837101C2C4EFF004856E6 /* GameOverLabelNodeTests.swift */,
 			);
 			name = GameOverScene;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				F91DD3731C2A3258004E45CC /* CGPoint+Extension.swift in Sources */,
 				F9B545481C2AE553001595A5 /* PhysicsCategory.swift in Sources */,
 				F91DD34B1C2A0518004E45CC /* GameScene.swift in Sources */,
+				F9E8370F1C2C4AF5004856E6 /* GameOverLabelNode.swift in Sources */,
 				F91DD3751C2A3806004E45CC /* Projectile.swift in Sources */,
 				F91DD34D1C2A0518004E45CC /* GameViewController.swift in Sources */,
 				F9DB48DA1C2B122F00471DDF /* UIColor+Extension.swift in Sources */,
@@ -312,6 +319,7 @@
 				F9B545571C2B071B001595A5 /* GameViewTests.swift in Sources */,
 				F91DD36F1C2A17E1004E45CC /* RandomGeneratorTests.swift in Sources */,
 				F9DB48D61C2B0D3100471DDF /* GameOverSceneTests.swift in Sources */,
+				F9E837111C2C4EFF004856E6 /* GameOverLabelNodeTests.swift in Sources */,
 				F9B545541C2B047D001595A5 /* AudioPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
