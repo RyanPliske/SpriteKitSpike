@@ -118,6 +118,7 @@
 			children = (
 				F91DD3461C2A0518004E45CC /* AppDelegate.swift */,
 				F91DD3771C2A4F2F004E45CC /* Game */,
+				F91DD3761C2A4EFB004E45CC /* Utility */,
 				F9B545491C2AEF55001595A5 /* Sounds */,
 				F91DD34E1C2A0518004E45CC /* Main.storyboard */,
 				F91DD3511C2A0518004E45CC /* Assets.xcassets */,
@@ -158,7 +159,6 @@
 				F91DD34C1C2A0518004E45CC /* GameViewController.swift */,
 				F9DB48D81C2B0E5300471DDF /* GameScene */,
 				F9DB48D71C2B0E4100471DDF /* GameOverScene */,
-				F91DD3761C2A4EFB004E45CC /* Utility */,
 			);
 			name = Game;
 			sourceTree = "<group>";
