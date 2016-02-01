@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -23,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="628" y="282"/>
         </scene>
-        <!--View Controller-->
+        <!--Matchmaking View Controller-->
         <scene sceneID="TTb-sR-fVo">
             <objects>
-                <viewController id="JQ6-eU-eO8" sceneMemberID="viewController">
+                <viewController id="JQ6-eU-eO8" customClass="MatchmakingViewController" customModule="spriteKitSpike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5YX-6R-4iu"/>
                         <viewControllerLayoutGuide type="bottom" id="Dea-qY-skg"/>
@@ -34,7 +35,20 @@
                     <view key="view" contentMode="scaleToFill" id="utb-LC-9rI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-7m-rzh">
+                                <rect key="frame" x="527" y="550" width="61" height="30"/>
+                                <state key="normal" title="To Game"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="ZWv-iB-NxG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Erl-7m-rzh" secondAttribute="trailing" constant="-8" id="IOH-sE-DeG"/>
+                            <constraint firstItem="Dea-qY-skg" firstAttribute="top" secondItem="Erl-7m-rzh" secondAttribute="bottom" constant="20" id="Sqr-A2-IdI"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfD-YK-hMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
